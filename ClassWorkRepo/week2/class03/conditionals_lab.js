@@ -12,11 +12,34 @@
 function whatCanYouDo (age) {
 	// CODE HERE
 	if (age < 16) {
-		console.log('you can go to school! YES!');
+		console.log('you can not do much outside of going to school');
+	}
+	else if (age >= 16 && age < 18){
+		console.log('you can drive');
+	}
+	else if (age >= 18 && age < 21){
+		console.log('you can vote');
+	}
+	else if (age >= 21 && age < 25){
+		console.log('you can drink alcohol');
+	}	
+	else if (age >= 25 && age < 35){
+		console.log('you can rent a car');
+	}	
+	else if (age >= 35 && age < 62){
+		console.log('you can run for president');
+	}
+	else if (age >= 62){
+		console.log('you can you collect social security benefits');
+	}
+	else {
+		console.log('Thats not a number!')
 	}
 }
 
 // Change this variable's value to generate different responses from the whatCanYouDo function
+
+
 var age = 28;
 
 // We haven't seen this yet, but this is how we call (or, invoke) a function
