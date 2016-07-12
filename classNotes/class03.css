@@ -1,0 +1,30 @@
+
+html{
+	font-family: Arial;
+	margin: 0 auto;
+	height: 100%;
+}
+
+ul{
+	list-style: none;
+	padding: 10px;
+}
+li {
+	padding: 5px;
+}
+#top{
+	width: cover;
+	height: 50px;
+	background-color: black;
+	position: relative;
+	margin-top: 10px;
+}
+#MainHeader{
+	color: white;
+	font-size: 40px;
+}
+#classLink{
+	padding: 10px;
+	transition: 1s;
+
+}
