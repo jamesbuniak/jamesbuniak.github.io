@@ -17,3 +17,22 @@ Creating a page where every time the user hits the "Roll Dice" button, the scree
 3) Attach an onclick event handler to the the element 'roll-dice' - when this button is clicked, it should trigger the above rollDice function
 
 */
+
+document.getElementById("roll-dice").addEventListener("click", function(){
+	var random1 = Math.floor((Math.random()*5+1));
+	var random2 = Math.floor((Math.random()*5+1));
+
+	console.log(random1);
+	console.log(random2);
+
+	var firstDie = "dice-" + random1;
+	var secondDie = "dice-" + random2;
+
+	document.getElementById("first-die").className = firstDie;
+	document.getElementById("second-die").className = secondDie;
+	
+});
+
+
+
+
