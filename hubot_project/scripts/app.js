@@ -35,13 +35,13 @@ module.exports = function(robot){
 
 
 	robot.hear(/tell me about (.*)/i, function(res){
- 		
-   	 			var knowledge = res.match[1].toLowerCase();
+
+   	 	var knowledge = res.match[1].toLowerCase();
 
    	 			try{
  					//use google API return wiki paragrah
  					robot.http("https://en.wikipedia.org/w/api.php?action=opensearch&search=" + knowledge + "&limit=2&format=json")
- 					.get()(function(err,res,body) {	
+ 					.get()(function(err,response,body) {	
     	 			//parse json data	
     	 			var api = JSON.parse(body);
     	 				if (api !== null){
@@ -49,34 +49,36 @@ module.exports = function(robot){
     	 					if (wiki.length >= 1){
     	 						var lastCharIsC = wiki[0].toString().slice(-1);
     	 						if (lastCharIsC  === ':'){
-    	 							console.log(wiki[1].toString()); 
+                                    res.send(wiki[1].toString())
     	 						}
     	 						else if (wiki[0].toString().slice(0, 18) === 'This is a redirect'){
-    	 							console.log(wiki[1].toString());	
+    	 							res.send(wiki[1].toString())	
     	 						}
     	 						else {
-    	 							console.log(wiki[0].toString()); 
+    	 							res.send(wiki[0].toString()); 
     	 						}
     	 					}
     	 					else {
-    	 						console.log("I have no knowlege of the subject.")
+    	 						res.send("I have no knowlege of the subject.")
     	 					}								
                      	 }
-                     	else{
-                     		console.log("Check your internet connection.") 
+                     	else {
+                     		res.send("Check your internet connection.")
                     	}
                      })
                 }
                 catch (err){
                     console.log("Unrecoverable error.")	
-                }    	
+                }
+
+   	
   	});						
 
 	robot.hear(/how far is (.*) to (.*)|how far is it (.*) to (.*)|what is the distance from (.*) to (.*)/i, function(res){
  		
  				//use google API to calaculate distance from points
  				robot.http("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + res.match[1] + "&destinations=" + res.match[2] + "&key=AIzaSyCsSMZydx9dKPHmWplNbo7OkpmIptyFrec")
- 				.get()(function(err,res,body) {	
+ 				.get()(function(err,response,body) {	
     	 			//parse json data	
     	 			var api = JSON.parse(body);
     	 			try{
@@ -84,12 +86,21 @@ module.exports = function(robot){
     	 				var time = api.rows[0].elements[0].duration.text;
     	 				var location1 = (api.destination_addresses[0]).split(',');
     	 				var location2 = (api.origin_addresses[0]).split(',');
-    	 				console.log("From " + location1[0] + " to " + location2[0] + " is about " + miles + " and will take you about " + time + "!");  									
+    	 				res.send("From " + location1[0] + " to " + location2[0] + " is about " + miles + " and will take you about " + time + "!");  									
                     }
                     catch (err){
-                    	console.log("Yea, thats not really a place. Try entering in a city to a city.")	
+                    	res.send("Yea, thats not really a place. Try entering in a city to a city.")	
                     }
   				});						
 	});
 
+
+
+    
+
+/*
+https://translate.yandex.net/api/v1.5/tr.json/translate ? key=<trnsl.1.1.20160719T210506Z.7e138c4d4cf54691.845168b715ee6e4467f208e06132c41ec9a06275>&text=<translate this>&lang=<en-ru>&[format=<plain>]&[options=<lang>]&[callback=<name of the callback function>]
+
+
+*/
 };			
