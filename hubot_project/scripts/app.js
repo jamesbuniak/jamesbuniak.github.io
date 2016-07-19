@@ -69,7 +69,7 @@ module.exports = function(robot){
                 }
                 catch (err){
                     console.log("Unrecoverable error.")	
-                    }    	
+                }    	
   	});						
 
 	robot.hear(/how far is (.*) to (.*)|how far is it (.*) to (.*)|what is the distance from (.*) to (.*)/i, function(res){
