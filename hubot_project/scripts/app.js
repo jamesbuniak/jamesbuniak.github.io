@@ -44,25 +44,32 @@ module.exports = function(robot){
  					.get()(function(err,res,body) {	
     	 			//parse json data	
     	 			var api = JSON.parse(body);
+    	 				if (api !== null){
     	 				var wiki = api[2];	
     	 					if (wiki.length >= 1){
     	 						var lastCharIsC = wiki[0].toString().slice(-1);
     	 						if (lastCharIsC  === ':'){
     	 							console.log(wiki[1].toString()); 
     	 						}
+    	 						else if (wiki[0].toString().slice(0, 18) === 'This is a redirect'){
+    	 							console.log(wiki[1].toString());	
+    	 						}
     	 						else {
     	 							console.log(wiki[0].toString()); 
-    	 						}	
+    	 						}
     	 					}
     	 					else {
     	 						console.log("I have no knowlege of the subject.")
-    	 					}									
-                    })
+    	 					}								
+                     	 }
+                     	else{
+                     		console.log("Check your internet connection.") 
+                    	}
+                     })
                 }
                 catch (err){
-                    console.log("I have no knowlege of the subject.")	
-                    }
-                	
+                    console.log("Unrecoverable error.")	
+                    }    	
   	});						
 
 	robot.hear(/how far is (.*) to (.*)|how far is it (.*) to (.*)|what is the distance from (.*) to (.*)/i, function(res){
