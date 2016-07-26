@@ -1,0 +1,21 @@
+html, body{
+
+
+}
+
+
+
+#new-thing-button{
+	position: fixed;
+	top: 50%;
+	right: 50%;
+}
+
+#new-thing{
+
+
+}
+
+li{
+	list-style: none;
+	text-align: center

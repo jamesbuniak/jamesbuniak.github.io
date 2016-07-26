@@ -1,15 +1,55 @@
-
 html, body{
-	padding: 0 auto;
-	margin: 0 auto;
+	height: 100%;
+	width: 100%;
 }
 
+body{
+	font-family: 'Raleway', sans-serif;
+	padding-top: 20px;
+}
 
-header{
-
+.navBar{
+	opacity: 0;
+	margin-top: 15px;
 }
 
 ul{
-	list-style: none;
-	text-align: right;
+	padding: 0;
+	list-style-type: none;
+}
+
+li {
+	display: inline block;
+	padding-left: 20px;
+	float: right;
+}
+
+button{
+	background-color: white;
+    border: none;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+#contactDiv, #sermonsDiv, #aboutDiv, #stuffDiv{
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	border-radius: 10px;
+	height: 100%;
+	display: none;
+}
+
+#contactDiv{
+	height:100px;
+	width:100px;
+}
+
+.content{
+	margin-top: 10%;
+	justify-content: center;
+	text-align: center;
+
 }
