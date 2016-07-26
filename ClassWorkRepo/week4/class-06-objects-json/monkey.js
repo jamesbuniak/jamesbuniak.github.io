@@ -46,8 +46,7 @@ let M = function(n,s,f){
 	}
 	this.e = function(f){eval(l(m + f.toString()))}
 }
-
-let l = 'console.log(x[i])'
+let l = 'console.log(x[i] + " ate some " + z[i])'
 let x = ['bob', 'chris', 'greeny']
 let z = ['pizza', 'orange', 'apple']
 let t = ['cool', 'stuff', 'bro']
@@ -55,8 +54,9 @@ let p = ['name', 'type', 'foodsEaten']
 
 for(var i = 0; i <= 2; i++){
    this.name = new M(x[i]);
-   eval(l)
+   eval(l)	
 }
+
 
 
 //what the customer wanted
