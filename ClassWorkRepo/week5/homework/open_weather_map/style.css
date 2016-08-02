@@ -1,0 +1,13 @@
+html{
+	background-color: white;
+	font-family: arial;
+	text-align: center;
+}
+#main{
+	padding-top: 50%;
+}
+
+#weather{
+	padding-top: 10px;
+}
+
