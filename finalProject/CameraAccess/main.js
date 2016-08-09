@@ -23,11 +23,12 @@ function gotStream(stream) {
 }
 
 function end() {
-  //window.stream = false;
-  videoElement.srcObject = false;
+    window.stream.getTracks().forEach(function(track) {
+      track.stop();
+   })
 }
 
-start();
+//start();
 
   $('#stop').click(function(){
     end()
@@ -35,5 +36,13 @@ start();
   $('#start').click(function(){
     start()
   })
+
+$('#snapshot').click(function(){
+
+  alert('snap')
+  var stream = videoElement.captureStream()
+  videoElement.srcObject = stream;
+})
+
 
 })
