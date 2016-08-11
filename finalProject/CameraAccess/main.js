@@ -39,10 +39,10 @@ function end() {
 
 $('#snapshot').click(function(){
 
-  alert('snap')
-  var stream = videoElement.captureStream()
-  videoElement.srcObject = stream;
-})
-
-
+    var canvas = document.getElementById('myCanvas');
+    var video = document.getElementById('video')
+    canvas.getContext('2d').drawImage(videoElement, 0, 0)
+    // $(canvas).css('height', video.height)
+    // $(canvas).css('width', video.width)
+  })
 })
