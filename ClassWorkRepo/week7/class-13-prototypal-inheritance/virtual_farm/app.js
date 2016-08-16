@@ -42,4 +42,35 @@ $(document).ready(function () {
 	// push all animal instances here
 	var farmAnimals = [];
 
+	function FarmAnimal (name, image, sound) {
+		this.name = name;
+		this.sound = sound;
+		this.image = image;
+	}
+
+var imageLinks = ['http://www.animalplanet.com/tv-shows/meerkat-manor/','http://www.punjabigraphics.com/images/158/Sweet-Kitten-Animal-Image.jpg', 'https://timedotcom.files.wordpress.com/2015/12/amazing-animal-photos-2015-049.jpg?quality=75&strip=color&w=838']
+
+	FarmAnimal.prototype.mak = new FarmAnimal('mak', imageLinks[0], 'makk')
+	FarmAnimal.prototype.lion = new FarmAnimal('lion', imageLinks[1], 'lion')
+	FarmAnimal.prototype.panda = new FarmAnimal('panda', imageLinks[2], 'panda')
+
+	var mak = new mak
+	var lion = new lion
+	var panda = new panda
+
+	// farmAnimals.push(mak, lion, panda)
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
 })

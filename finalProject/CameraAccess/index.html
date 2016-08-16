@@ -1,35 +1,43 @@
  <!DOCTYPE html>
 <html>
-<head>
+  <style>
+    #video, #myCanvas {
+      float: left;
+    }
 
-  <base target="_blank">
-
-  <title>Select audio and video sources</title>
-
-</head>
-
+  </style>
 <body>
-  <div id="container">
 
-   
+    <div id='image'>
+    <video id="video" autoplay></video>
+    <canvas id="myCanvas"></canvas>
+    </div>
 
+    <div id='control'>
+<!--       <button id='stop'>stop</button>
+      <button id='start'>start</button> -->
+      <button id='snapshot'>snap</button>
+    </div>
 
-    <video id="video" height=100px width=100px autoplay></video>
-    
-    <canvas id="myCanvas" style="border:1px solid #000000;">
+</body>
 
-    </canvas>
+<!-- jquery -->
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
 
-    <div id='pictures'></div>
+<!-- image recon lib -->
+<script type="text/javascript" src="https://sdk.clarifai.com/js/clarifai-1.2.1.js"></script>
+<!-- <script>
+  Clarifai.initialize({
+    'clientId': 'BT8sY6okrw8QvERUZ1n2aDDv_q9XVT-EDRwwDsWi',
+    'clientSecret': '6Fke8ucXZhCAryQjTLWo9dbVngvSNe8KddIbYurj'
+  });
 
-    <button id='stop'>stop</button>
-    <button id='start'>start</button>
-    <button id='snapshot'>snap</button>
-  </div>
+</script> -->
 
 <!-- tracking.js stuff -->
   <script src="tracking-min.js"></script>
   <script src="face-min.js"></script>
+  <!-- <script src="platform.js"></script> -->
   <script src="dat.gui.min.js"></script>
 <!--   <script src="stats.min.js"></script> -->
 
@@ -43,6 +51,4 @@
 
 
 
-
-</body>
 </html>
