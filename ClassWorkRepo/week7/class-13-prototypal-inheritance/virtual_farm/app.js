@@ -54,10 +54,6 @@ var imageLinks = ['http://www.animalplanet.com/tv-shows/meerkat-manor/','http://
 	FarmAnimal.prototype.lion = new FarmAnimal('lion', imageLinks[1], 'lion')
 	FarmAnimal.prototype.panda = new FarmAnimal('panda', imageLinks[2], 'panda')
 
-	var mak = new mak
-	var lion = new lion
-	var panda = new panda
-
 	// farmAnimals.push(mak, lion, panda)
 
 

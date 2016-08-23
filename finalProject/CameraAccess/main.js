@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 var videoElement = document.querySelector('video');
 
 function start() {
@@ -44,9 +43,9 @@ start();
     var image = canvas.getContext('2d').drawImage(videoElement, 0, 0)
 
     //var imageUrl = 'http://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg'
-    
-    var imageUrl = canvas.toDataUrl()
-    var access_token = '2hfWzAAtRyDKdmbKwWh9zHpwUtKDlO'
+
+    //var imageUrl = canvas.toDataUrl()
+    var access_token = '8pMJ6VTvPcHTwnsC6Figs1ReHoq4cS'
     var URL = 'https://api.clarifai.com/v1/tag?url=' + imageUrl +'&access_token=' + access_token
 
     var imageJson = $.getJSON(URL,function(data,status,xhr){ console.log(data)})
