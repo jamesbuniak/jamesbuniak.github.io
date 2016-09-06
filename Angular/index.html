@@ -1,0 +1,31 @@
+<!doctype html>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <head>
+      <title></title>
+    </head>
+
+    <body ng-app="ToDoApp" class="ng-cloak">
+
+    <!-- wrap data and angular-->
+      <div id="wrapper" ng-controller="ToDoAppCtrl" >
+        <!-- this is the place where it will add the value -->
+        <h1>{{title}}</h1>
+
+        <!-- form input-->
+        <form id="item-form">
+          <input type="text" id="new-item" placeholder="New Item" ng-model="inputText">
+          <button id="clickme" ng-click="addItem()">Add Item</button>
+          <button id='clear' ng-click='removeAll()'>Clear</button>
+        </form>
+        
+        <ul id="list">
+          <li ng-repeat="item in items track by $index" ng-click="removeItem($index)">{{item}}</li>
+        </ul>
+      </div>  <!-- wrapper -->
+    </body>
+
+<script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src='app.js'></script>
+
+</html>

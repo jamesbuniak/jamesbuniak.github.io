@@ -1,0 +1,14 @@
+{
+  "name": "friendcrash",
+  "version": "1.0.0",
+  "description": "peer to peer picture sharing",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Buniak",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^3.3.0"
+  }
+}
